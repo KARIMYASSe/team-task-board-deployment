@@ -14,7 +14,7 @@ export default function CreateTask({
       const token = localStorage.getItem("token");
 
       const { status } = await axios.post(
-        `http://localhost:3000/projects/${projectId}/tasks`,
+        `${import.meta.env.VITE_API_URL}/projects/${projectId}/tasks`,
         value,
         {
           headers: {

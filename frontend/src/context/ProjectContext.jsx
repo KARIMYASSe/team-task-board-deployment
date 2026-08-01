@@ -9,7 +9,7 @@ export function ProjectContextProvider({ children }) {
   async function getProjects() {
     const token = localStorage.getItem("token");
 
-    const { data } = await axios.get("http://localhost:3000/projects", {
+    const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/projects`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

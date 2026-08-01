@@ -65,7 +65,7 @@ export default function TaskCard({
       const token = localStorage.getItem("token");
 
       const { status } = await axios.delete(
-        `http://localhost:3000/projects/${projectId}/tasks/${task._id}`,
+        `${import.meta.env.VITE_API_URL}/projects/${projectId}/tasks/${task._id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

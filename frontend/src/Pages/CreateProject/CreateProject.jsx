@@ -10,7 +10,7 @@ export default function CreateProject() {
     const token = localStorage.getItem("token");
 
     const { data, status } = await axios.post(
-      "http://localhost:3000/projects/create",
+      `${import.meta.env.VITE_API_URL}/projects/create`,
       value,
       {
         headers: {

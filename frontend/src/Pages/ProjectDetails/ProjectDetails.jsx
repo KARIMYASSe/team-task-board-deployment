@@ -28,7 +28,7 @@ export default function ProjectDetails() {
 
       const token = localStorage.getItem("token");
 
-      const { data } = await axios.get(`http://localhost:3000/projects/${id}`, {
+      const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/projects/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -53,7 +53,7 @@ export default function ProjectDetails() {
       const token = localStorage.getItem("token");
 
       const { data, status } = await axios.patch(
-        `http://localhost:3000/projects/${id}`,
+        `${import.meta.env.VITE_API_URL}/projects/${id}`,
         value,
         {
           headers: {
@@ -90,7 +90,7 @@ export default function ProjectDetails() {
       const token = localStorage.getItem("token");
 
       const { status } = await axios.delete(
-        `http://localhost:3000/projects/${id}`,
+        `${import.meta.env.VITE_API_URL}/projects/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -113,7 +113,7 @@ export default function ProjectDetails() {
       const token = localStorage.getItem("token");
 
       const { data, status } = await axios.post(
-        `http://localhost:3000/projects/${id}/members`,
+        `${import.meta.env.VITE_API_URL}/projects/${id}/members`,
         {
           email: memberEmail.trim().toLowerCase(),
         },
@@ -147,7 +147,7 @@ export default function ProjectDetails() {
       const token = localStorage.getItem("token");
 
       const { data, status } = await axios.delete(
-        `http://localhost:3000/projects/${id}/members/${userId}`,
+        `${import.meta.env.VITE_API_URL}/projects/${id}/members/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

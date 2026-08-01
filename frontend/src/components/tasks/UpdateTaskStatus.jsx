@@ -15,7 +15,7 @@ export default function UpdateTaskStatus({ task, projectId, onUpdated }) {
       const token = localStorage.getItem("token");
 
       const { status } = await axios.patch(
-        `http://localhost:3000/projects/${projectId}/tasks/${task._id}`,
+        `${import.meta.env.VITE_API_URL}/projects/${projectId}/tasks/${task._id}`,
         {
           status: statusValue,
         },

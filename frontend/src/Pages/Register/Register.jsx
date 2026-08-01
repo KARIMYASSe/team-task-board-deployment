@@ -17,7 +17,7 @@ export default function Register() {
 
   async function handleRegister(value) {
     const { data, status } = await axios.post(
-      "http://localhost:3000/users/signup",
+      `${import.meta.env.VITE_API_URL}/users/signup`,
       value,
     );
 

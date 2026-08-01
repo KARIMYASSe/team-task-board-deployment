@@ -20,7 +20,7 @@ export default function Login() {
 
   async function handleLogin(value) {
     const { data, status } = await axios.post(
-      "http://localhost:3000/users/signin",
+      `${import.meta.env.VITE_API_URL}/users/signin`,
       value,
     );
 

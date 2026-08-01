@@ -17,7 +17,7 @@ export function UserContextProvider({ children }) {
     }
 
     try {
-      const { data } = await axios.get("http://localhost:3000/users/profile", {
+      const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/users/profile`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

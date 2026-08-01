@@ -25,7 +25,7 @@ export default function Tasks({ projectId, members = [], canManageProject }) {
       const token = localStorage.getItem("token");
 
       const { data } = await axios.get(
-        `http://localhost:3000/projects/${projectId}/tasks`,
+        `${import.meta.env.VITE_API_URL}/projects/${projectId}/tasks`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
